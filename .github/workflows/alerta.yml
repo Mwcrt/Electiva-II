@@ -12,6 +12,6 @@ jobs:
       - name: Enviar notificación a ntfy.sh
         run: |
           curl -H "Title: Push de ${{ github.actor }}" \
-               -H "Priority: 5" \
+               -H "Priority: 6" \
                -d "🚀 ${{ github.actor }} subió código al repositorio ${{ github.repository }} con el mensaje: '${{ github.event.head_commit.message }}'" \
                https://ntfy.sh/devops-itla
