@@ -1,0 +1,17 @@
+name: Alerta de Push a Main
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  notificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enviar notificación a ntfy.sh
+        run: |
+          curl -H "Title: Push de ${{ github.actor }}" \
+               -H "Priority: 5" \
+               -d "🚀 ${{ github.actor }} subió código al repositorio ${{ github.repository }} con el mensaje: '${{ github.event.head_commit.message }}'" \
+               https://ntfy.sh/devops-itla
