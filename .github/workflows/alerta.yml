@@ -3,7 +3,7 @@ name: Alerta de Push a Main
 on:
   push:
     branches:
-      - dev
+      - main
 
 jobs:
   notificar:
